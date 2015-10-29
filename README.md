@@ -1,2 +1,2 @@
 # nerdyknife
-collection of useful tool
+collection of useful features
