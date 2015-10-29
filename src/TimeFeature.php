@@ -25,9 +25,9 @@ class TimeFeature {
 		list($hour, $minute, $second) = explode(':', (string) $time);
 		$minutes += $hour * 60;
 		$minutes += $minute;
-		$minutes += (100 / 60) * $second;
+		$minutes += 100 / ((100 / 60) * $second);
 		
-		return (float) \number_format($minutes, 2);
+		return (float) $minutes;
 	}
 	
 }
