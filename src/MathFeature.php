@@ -21,7 +21,11 @@ class MathFeature {
 	 * @return float
 	 */
 	public static function getPercentFromRange($value, $min, $max) {
-		return (float) 100 - ((100 / ($max - $min)) * ($max - $value));
+		$diff = $max - $min;
+		if($diff <= 0) {
+			return 0;
+		}
+		return (float) number_format(100 - ((100 / $diff) * ($max - $value)), $decimals);
 	}
 	
 }
