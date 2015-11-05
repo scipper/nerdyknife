@@ -31,6 +31,19 @@ class TimeFeature {
 		
 		return (float) $minutes;
 	}
+
+	/**
+	 * 
+	 * @param \DateTime $date1
+	 * @param \DateTime $date2
+	 */
+	public static function datediffInWeeks(\DateTime $date1, \DateTime $date2) {
+	    if($date1->getTimestamp() > $date2->getTimestamp()) {
+	    	return datediffInWeeks($date2, $date1);
+	    }
+	    
+	    return floor($date1->diff($date2)->days / 7);
+	}
 	
 }
 
