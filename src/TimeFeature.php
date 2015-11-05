@@ -39,7 +39,7 @@ class TimeFeature {
 	 */
 	public static function datediffInWeeks(\DateTime $date1, \DateTime $date2) {
 	    if($date1->getTimestamp() > $date2->getTimestamp()) {
-	    	return datediffInWeeks($date2, $date1);
+	    	return self::datediffInWeeks($date2, $date1);
 	    }
 	    
 	    return floor($date1->diff($date2)->days / 7);
