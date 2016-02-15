@@ -51,7 +51,7 @@ class TimeFeature {
 	 * @param string $year
 	 * @return NULL[]|\DateTime[]
 	 */
-	public function getStartAndEndDate($week, $year) {
+	public static function getStartAndEndDate($week, $year) {
 		$range = array(
 			"start" => NULL,
 			"end" => NULL
