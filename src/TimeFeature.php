@@ -45,6 +45,28 @@ class TimeFeature {
 	    return floor($date1->diff($date2)->days / 7);
 	}
 	
+	/**
+	 * 
+	 * @param string $week
+	 * @param string $year
+	 * @return NULL[]|\DateTime[]
+	 */
+	public function getStartAndEndDate($week, $year) {
+		$range = array(
+			"start" => NULL,
+			"end" => NULL
+		);
+		
+		$date = new \DateTime();
+		$date->setISODate($year, $week);
+		
+		$range["start"] = new \DateTime($date->format("d.m.Y"));
+		$date->modify("+6 days");
+		$range["end"] = new \DateTime($date->format("d.m.Y"));
+		
+		return $range;
+	}
+	
 }
 
 ?>
